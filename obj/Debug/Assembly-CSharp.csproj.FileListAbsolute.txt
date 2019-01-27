@@ -1,0 +1,2 @@
+/Users/mattstack/Downloads/cisc374-silvereyes-classification-tree-master/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
+/Users/mattstack/Downloads/cisc374-silvereyes-classification-tree-master/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
