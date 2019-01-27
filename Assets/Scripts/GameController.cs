@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
     GameObject b1;
     GameObject b2;
     GameObject b3;
+    GameObject b5;
 
     private void Awake()
     {
@@ -59,6 +60,7 @@ public class GameController : MonoBehaviour
         b1 = GameObject.Find("Button");
         b2 = GameObject.Find("Button (1)");
         b3 = GameObject.Find("Button (2)");
+        b5 = GameObject.Find("BigData");
 
 
     }
@@ -72,6 +74,7 @@ public class GameController : MonoBehaviour
                 birds.Add((GameObject)Instantiate(birdPrefab, objectPoolPosition, Quaternion.identity));
             }
             bigDataClicked = true;
+            b5.SetActive(false);
         }
 
     }
@@ -112,6 +115,7 @@ public class GameController : MonoBehaviour
         }
         clicked = true;
         b2.SetActive(false);
+        b5.SetActive(false);
     }
 
     void OnClickColor()
@@ -138,7 +142,8 @@ public class GameController : MonoBehaviour
         }
         clicked = true;
         b1.SetActive(false);
-    }
+        b5.SetActive(false);
+        }
     void OnClickFlight()
     {
         //Output this to console when Button1 or Button3 is clicked
@@ -157,7 +162,7 @@ public class GameController : MonoBehaviour
         }
         clicked = true;
         b3.SetActive(false);
-
+        b5.SetActive(false);
     }
 
     void OnClickRestart()
