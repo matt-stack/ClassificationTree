@@ -9,7 +9,7 @@ public class Bird : MonoBehaviour
     public string color;
     public float height;
     public bool flight;
-    public bool isright = true;
+    public bool isRight = true;
 
     private string species;
     private string[] colors = { "green", "brown" };
