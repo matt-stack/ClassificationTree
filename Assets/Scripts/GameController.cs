@@ -151,6 +151,10 @@ public class GameController : MonoBehaviour
         clicked = true;
         b2.SetActive(false);
         b5.SetActive(false);
+        if (!b1.activeInHierarchy)
+            b3.SetActive(false);
+        if (!b3.activeInHierarchy)
+            b1.SetActive(false);
     }
 
     void OnClickHeightLeft()
@@ -188,6 +192,10 @@ public class GameController : MonoBehaviour
         clicked = true;
         b5.SetActive(false);
         b7.SetActive(false);
+        if (!b8.activeInHierarchy)
+            b6.SetActive(false);
+        if (!b6.activeInHierarchy)
+            b8.SetActive(false);
     }
 
     void OnClickColor()
@@ -228,7 +236,11 @@ public class GameController : MonoBehaviour
         clicked = true;
         b1.SetActive(false);
         b5.SetActive(false);
-        }
+        if (!b2.activeInHierarchy)
+            b3.SetActive(false);
+        if (!b3.activeInHierarchy)
+            b2.SetActive(false);
+    }
     void OnClickColorLeft()
     {
         //Output this to console when Button1 or Button3 is clicked
@@ -264,6 +276,10 @@ public class GameController : MonoBehaviour
         clicked = true;
         b5.SetActive(false);
         b6.SetActive(false);
+        if (!b7.activeInHierarchy)
+            b8.SetActive(false);
+        if (!b8.activeInHierarchy)
+            b7.SetActive(false);
     }
 
 
@@ -293,6 +309,10 @@ public class GameController : MonoBehaviour
         clicked = true;
         b3.SetActive(false);
         b5.SetActive(false);
+        if (!b1.activeInHierarchy)
+            b2.SetActive(false);
+        if (!b2.activeInHierarchy)
+            b1.SetActive(false);
     }
 
     void OnClickFlightLeft()
@@ -317,6 +337,10 @@ public class GameController : MonoBehaviour
         clicked = true;
         b5.SetActive(false);
         b8.SetActive(false);
+        if (!b7.activeInHierarchy)
+            b6.SetActive(false);
+        if (!b6.activeInHierarchy)
+            b7.SetActive(false);
     }
 
     void OnClickRestart()
@@ -333,7 +357,7 @@ public class GameController : MonoBehaviour
         count += b6.activeInHierarchy ? 1 : 0;
         count += b7.activeInHierarchy ? 1 : 0;
         count += b8.activeInHierarchy ? 1 : 0;
-        if(count < 3)
+        if(count < 1)
         {
             endGame();
         }
