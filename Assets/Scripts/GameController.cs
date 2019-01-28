@@ -10,8 +10,9 @@ public class GameController : MonoBehaviour
     public int birdPoolSize = 5;
     public int bigDataSize = 30;
     public GameObject birdPrefab;
-    public Button button1, button2, button3, button4, button5;
+    public Button button1, button2, button3, button4, button5, button6, button7, button8;
     public bool bigDataClicked = false;
+    public int level = 0;
 
     private List<GameObject> birds;
     private Vector2 objectPoolPosition = new Vector2(0, 5);
@@ -22,6 +23,9 @@ public class GameController : MonoBehaviour
     GameObject b1;
     GameObject b2;
     GameObject b3;
+    GameObject b4;
+    GameObject b5;
+    GameObject b6;
 
     private void Awake()
     {
@@ -54,12 +58,20 @@ public class GameController : MonoBehaviour
         button4.onClick.AddListener(OnClickRestart);
         button4.onClick.AddListener(OnClickZoom);
         button5.onClick.AddListener(OnClickBigData);
+        button6.onClick.AddListener(OnClickColorLeft);
+        button6.onClick.AddListener(OnClickZoom);
+        button7.onClick.AddListener(OnClickHeightLeft);
+        button7.onClick.AddListener(OnClickZoom);
+        button8.onClick.AddListener(OnClickFlightLeft);
+        button8.onClick.AddListener(OnClickZoom);
 
         Camera.main.transform.position = new Vector3(0f, 9.32f, -10f);
-        b1 = GameObject.Find("Button");
-        b2 = GameObject.Find("Button (1)");
-        b3 = GameObject.Find("Button (2)");
-
+        b1 = GameObject.Find("Color(right)");
+        b2 = GameObject.Find("Height(right)");
+        b3 = GameObject.Find("Flight(right)");
+        b4 = GameObject.Find("Color(left)");
+        b5 = GameObject.Find("Height(left)");
+        b6 = GameObject.Find("Flight(left)");
 
     }
 
@@ -95,24 +107,79 @@ public class GameController : MonoBehaviour
         {
             Bird bird;
             bird = b.GetComponent<Bird>();
-            if (clicked == false)
+            if (bird.right)
             {
-                if (bird.height > 1)
-                    bird.gameObject.layer = 8;
+                if (clicked == false)
+                {
+                    if (bird.height > 1)
+                    {
+                        bird.gameObject.layer = 9;
+                        bird.right = false;
+                    }
+                    else
+                        bird.gameObject.layer = 8;
+
+                    
+                }
                 else
-                    bird.gameObject.layer = 9;
+                {
+                    if (bird.height > 1)
+                    {
+                        bird.gameObject.layer = 12;
+                        bird.right = false;
+                    }
+                    else
+                        bird.gameObject.layer = 11;
+                }
             }
-            else
+        }
+       // if (!clicked)
+        //{
+          //  b4.SetActive(true);
+            //b5.SetActive(true);
+            //b6.SetActive(true);
+       // }
+        clicked = true;
+        b2.SetActive(false);
+        
+    }
+
+    void OnClickHeightLeft()
+    {
+        //Output this to console when Button1 or Button3 is clicked
+        foreach (GameObject b in birds)
+        {
+            Bird bird;
+            bird = b.GetComponent<Bird>();
+            if (!bird.right)
             {
-                if (bird.height > 1)
-                    bird.gameObject.layer = 11;
+                if (clicked == false)
+                {
+                    if (bird.height > 1)
+                    {
+                        bird.gameObject.layer = 9;
+                        //bird.right = false;
+                    }
+                    else
+                        bird.gameObject.layer = 8;
+
+                }
                 else
-                    bird.gameObject.layer = 12;
+                {
+                    if (bird.height > 1)
+                    {
+                        bird.gameObject.layer = 12;
+                       // bird.right = false;
+                    }
+                    else
+                        bird.gameObject.layer = 11;
+                }
             }
         }
         clicked = true;
-        b2.SetActive(false);
+        b5.SetActive(false);
     }
+
 
     void OnClickColor()
     {
@@ -121,24 +188,79 @@ public class GameController : MonoBehaviour
         {
             Bird bird;
             bird = b.GetComponent<Bird>();
-            if (clicked == false)
+            if (bird.right)
             {
-                if (bird.color.Equals("brown"))
-                    bird.gameObject.layer = 8;
+                if (clicked == false)
+                {
+                    if (bird.color.Equals("brown"))
+                    {
+                        bird.gameObject.layer = 9;
+                        bird.right = false;
+
+                    }
+                    else
+                        bird.gameObject.layer = 8;
+
+                }
                 else
-                    bird.gameObject.layer = 9;
+                {
+                    if (bird.color.Equals("brown"))
+                    {
+                        bird.gameObject.layer = 12;
+                        bird.right = false;
+                    }
+                    else
+                        bird.gameObject.layer = 11;
+                }
             }
-            else
-            {
-                if (bird.color.Equals("brown"))
-                    bird.gameObject.layer = 11;
-                else
-                    bird.gameObject.layer = 12;
-            }
+        }
+        if (!clicked)
+        {
+            b4.SetActive(true);
+            b5.SetActive(true);
+            b6.SetActive(true);
         }
         clicked = true;
         b1.SetActive(false);
     }
+
+    void OnClickColorLeft()
+    {
+        //Output this to console when Button1 or Button3 is clicked
+        foreach (GameObject b in birds)
+        {
+            Bird bird;
+            bird = b.GetComponent<Bird>();
+            if (!bird.right)
+            {
+                if (clicked == false)
+                {
+                    if (bird.color.Equals("brown"))
+                    {
+                        bird.gameObject.layer = 9;
+                       // bird.right = false;
+
+                    }
+                    else
+                        bird.gameObject.layer = 8;
+                }
+                else
+                {
+                    if (bird.color.Equals("brown"))
+                    {
+                        bird.gameObject.layer = 12;
+                        //bird.right = false;
+                    }
+                    else
+                        bird.gameObject.layer = 11;
+                }
+            }
+        }
+        clicked = true;
+        b4.SetActive(false);
+    }
+
+
     void OnClickFlight()
     {
         //Output this to console when Button1 or Button3 is clicked
@@ -146,19 +268,54 @@ public class GameController : MonoBehaviour
         {
             Bird bird;
             bird = b.GetComponent<Bird>();
-            if (clicked == false)
+            if (bird.right)
             {
-                bird.gameObject.layer = 8;
+                if (clicked == false)
+                {
+                    bird.gameObject.layer = 11;
+                }
+                else
+                {
+                    bird.gameObject.layer = 8;
+                }
             }
-            else
-            {
-                bird.gameObject.layer = 11;
-            }
+        }
+        if (!clicked)
+        {
+            b4.SetActive(true);
+            b5.SetActive(true);
+            b6.SetActive(true);
         }
         clicked = true;
         b3.SetActive(false);
 
     }
+
+    void OnClickFlightLeft()
+    {
+        //Output this to console when Button1 or Button3 is clicked
+        foreach (GameObject b in birds)
+        {
+            Bird bird;
+            bird = b.GetComponent<Bird>();
+            if (!bird.right)
+            {
+                if (clicked == false)
+                {
+                    bird.gameObject.layer = 11;
+                }
+                else
+                {
+                    bird.gameObject.layer = 8;
+                }
+            }
+        }
+        clicked = true;
+        b6.SetActive(false);
+
+    }
+
+
 
     void OnClickRestart()
     {
