@@ -13,6 +13,7 @@ public class NewMonoBehaviour : MonoBehaviour
     public Button button1, button2, button3, button4, button5, button6;
 //    public Text pickedColor, pickedHeight, pickedFlight;
     public bool bigDataClicked = false;
+    public static bool firstGame = true;
 
     private List<GameObject> birds;
     private Vector2 objectPoolPosition = new Vector2(0, 5);
@@ -70,6 +71,13 @@ public class NewMonoBehaviour : MonoBehaviour
         pickedHeight = GameObject.Find("Picked Height");
         pickedFlight = GameObject.Find("Picked Flight?");
 
+        if (firstGame)
+        {
+            b1.SetActive(false);
+        } else
+        {
+            b1.SetActive(true);
+        }
         b6.SetActive(false);
         pickedColor.SetActive(false);
         pickedHeight.SetActive(false);
@@ -183,6 +191,7 @@ public class NewMonoBehaviour : MonoBehaviour
     void OnClickRestart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        firstGame = false;
     }
 
     void TaskWithParameters(string message)
