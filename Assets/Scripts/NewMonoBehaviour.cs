@@ -147,14 +147,14 @@ public class NewMonoBehaviour : MonoBehaviour
             bird = b.GetComponent<Bird>();
             if (clicked == false)
             {
-                if (bird.color.Equals("brown"))
+                if (bird.color.Equals("blue"))
                     bird.gameObject.layer = 8;
                 else
                     bird.gameObject.layer = 9;
             }
             else
             {
-                if (bird.color.Equals("brown"))
+                if (bird.color.Equals("blue"))
                     bird.gameObject.layer = 11;
                 else
                     bird.gameObject.layer = 12;

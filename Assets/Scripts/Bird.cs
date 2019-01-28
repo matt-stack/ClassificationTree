@@ -11,9 +11,9 @@ public class Bird : MonoBehaviour
     public bool flight;
     public bool isRight = true;
 
-    private string species;
-    private string[] colors = { "green", "brown" };
-    private string[] speciess = { "kiwi", "Moa" };
+    public string species;
+    private string[] colors = { "yellow", "blue" };
+    private string[] speciess = { "kiwi", "moa" };
 
     private Sprite spriteB;
     private Sprite spriteY;
@@ -28,7 +28,7 @@ public class Bird : MonoBehaviour
         color = (Random.value > 0.5f) ? colors[0] : colors[1];
         height = Random.value * 2f;
         flight = Random.value > 0.5f;
-        if (height > 1f)
+        if ((height > 1f && color.Equals("blue")) || (height <= 1f && color.Equals("yellow")))
         {
             species = speciess[1];
         }
@@ -38,13 +38,13 @@ public class Bird : MonoBehaviour
         }
         // sprite editing
         // color
-        if (color == "green")
-        {
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteB;
-        }
-        else if (color == "brown")
+        if (color == "yellow")
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteY;
+        }
+        else if (color == "blue")
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteB;
         }
         //size
         //gameObject.transform.Translate(1.0f, 1.0f, 1.0f);

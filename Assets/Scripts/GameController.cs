@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameController : MonoBehaviour
     public GameObject birdPrefab;
     public Button button1, button2, button3, button4, button5, button6, button7, button8;
     public bool bigDataClicked = false;
+    public GameObject winText, loseText;
 
     private List<GameObject> birds;
     private Vector2 objectPoolPosition = new Vector2(0, 5);
@@ -64,6 +66,13 @@ public class GameController : MonoBehaviour
         button7.onClick.AddListener(OnClickZoom);
         button8.onClick.AddListener(OnClickFlightLeft);
         button8.onClick.AddListener(OnClickZoom);
+        button1.onClick.AddListener(OnClickEndCheck);
+        button2.onClick.AddListener(OnClickEndCheck);
+        button3.onClick.AddListener(OnClickEndCheck);
+        button4.onClick.AddListener(OnClickEndCheck);
+        button6.onClick.AddListener(OnClickEndCheck);
+        button7.onClick.AddListener(OnClickEndCheck);
+        button8.onClick.AddListener(OnClickEndCheck);
 
         Camera.main.transform.position = new Vector3(0f, 9.32f, -10f);
         b1 = GameObject.Find("Color_right");
@@ -73,7 +82,9 @@ public class GameController : MonoBehaviour
         b6 = GameObject.Find("Color_left");
         b7 = GameObject.Find("Height_left");
         b8 = GameObject.Find("Flight_left");
-
+        b6.SetActive(false);
+        b7.SetActive(false);
+        b8.SetActive(false);
 
     }
 
@@ -105,7 +116,6 @@ public class GameController : MonoBehaviour
 
     void OnClickHeight()
     {
-        //Output this to console when Button1 or Button3 is clicked
         foreach (GameObject b in birds)
         {
             Bird bird;
@@ -123,16 +133,18 @@ public class GameController : MonoBehaviour
                         bird.gameObject.layer = 8;
 
                     b7.SetActive(false);
+                    b8.SetActive(true);
+                    b6.SetActive(true);
                 }
                 else
                 {
                     if (bird.height > 1)
                     {
-                        bird.gameObject.layer = 12;
+                        bird.gameObject.layer = 14;
                         bird.isRight = false;
                     }
                     else
-                        bird.gameObject.layer = 11;
+                        bird.gameObject.layer = 13;
                 }
             }
         }
@@ -189,7 +201,7 @@ public class GameController : MonoBehaviour
             {
                 if (clicked == false)
                 {
-                    if (bird.color.Equals("brown"))
+                    if (bird.color.Equals("blue"))
                     {
                         bird.gameObject.layer = 9;
                         bird.isRight = false;
@@ -198,16 +210,18 @@ public class GameController : MonoBehaviour
                         bird.gameObject.layer = 8;
 
                     b6.SetActive(false);
+                    b7.SetActive(true);
+                    b8.SetActive(true);
                 }
                 else
                 {
-                    if (bird.color.Equals("brown"))
+                    if (bird.color.Equals("blue"))
                     {
-                        bird.gameObject.layer = 12;
+                        bird.gameObject.layer = 14;
                         bird.isRight = false;
                     }
                     else
-                        bird.gameObject.layer = 11;
+                        bird.gameObject.layer = 13;
                 }
             }
         }
@@ -226,7 +240,7 @@ public class GameController : MonoBehaviour
             {
                 if (clicked == false)
                 {
-                    if (bird.color.Equals("brown"))
+                    if (bird.color.Equals("blue"))
                     {
                         bird.gameObject.layer = 9;
                         // bird.right = false;
@@ -237,7 +251,7 @@ public class GameController : MonoBehaviour
                 }
                 else
                 {
-                    if (bird.color.Equals("brown"))
+                    if (bird.color.Equals("blue"))
                     {
                         bird.gameObject.layer = 12;
                         //bird.right = false;
@@ -266,11 +280,13 @@ public class GameController : MonoBehaviour
                 {
                     bird.gameObject.layer = 8;
 
+                    b6.SetActive(true);
+                    b7.SetActive(true);
                     b8.SetActive(false);
                 }
                 else
                 {
-                    bird.gameObject.layer = 11;
+                    bird.gameObject.layer = 13;
                 }
             }
         }
@@ -306,6 +322,102 @@ public class GameController : MonoBehaviour
     void OnClickRestart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    void OnClickEndCheck()
+    {
+        int count = 0;
+        count += b1.activeInHierarchy ? 1 : 0;
+        count += b2.activeInHierarchy ? 1 : 0;
+        count += b3.activeInHierarchy ? 1 : 0;
+        count += b6.activeInHierarchy ? 1 : 0;
+        count += b7.activeInHierarchy ? 1 : 0;
+        count += b8.activeInHierarchy ? 1 : 0;
+        if(count < 3)
+        {
+            endGame();
+        }
+    }
+
+    private void endGame()
+    {
+        b1.SetActive(false);
+        b2.SetActive(false);
+        b3.SetActive(false);
+        b6.SetActive(false);
+        b7.SetActive(false);
+        b8.SetActive(false);
+
+        bool kiwi11 = false;
+        bool moa11 = false;
+
+        bool kiwi12 = false;
+        bool moa12 = false;
+
+        bool kiwi13 = false;
+        bool moa13 = false;
+
+        bool kiwi14 = false;
+        bool moa14 = false;
+
+        foreach (GameObject b in birds)
+        {
+            Bird bird;
+            bird = b.GetComponent<Bird>();
+            if (b.layer == 11)
+            {
+                if (bird.species.Equals("kiwi"))
+                {
+                    kiwi11 = true;
+                }
+                else
+                {
+                    moa11 = true;
+                }
+            }
+            if (b.layer == 12)
+            {
+                if (bird.species.Equals("kiwi"))
+                {
+                    kiwi12 = true;
+                }
+                else
+                {
+                    moa12 = true;
+                }
+            }
+            if (b.layer == 13)
+            {
+                if (bird.species.Equals("kiwi"))
+                {
+                    kiwi13 = true;
+                }
+                else
+                {
+                    moa13 = true;
+                }
+            }
+            if (b.layer == 14)
+            {
+                if (bird.species.Equals("kiwi"))
+                {
+                    kiwi14 = true;
+                }
+                else
+                {
+                    moa14 = true;
+                }
+            }
+        }
+        if ((kiwi11 && moa11) || (kiwi12 && moa12) || (kiwi13 && moa13) || (kiwi14 && moa14))
+        {
+            loseText.SetActive(true);
+            Debug.Log("" + (kiwi11 && moa11) + ", " + (kiwi12 && moa12) + ", " + (kiwi13 && moa13) + ", " + (kiwi14 && moa14));
+        }
+        else
+        {
+            winText.SetActive(true);
+        }
     }
 
     void TaskWithParameters(string message)
