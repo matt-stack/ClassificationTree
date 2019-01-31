@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     public GameObject birdPrefab;
     public Button button1, button2, button3, button4, button5, button6, button7, button8;
     public bool bigDataClicked = false;
-    public GameObject winText, loseText;
+    public GameObject winText, loseText, xSprite, check;
 
     private List<GameObject> birds;
     private Vector2 objectPoolPosition = new Vector2(0, 5);
