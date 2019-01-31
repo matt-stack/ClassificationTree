@@ -15,8 +15,7 @@ public class ButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             blueA = GameObject.Find("Blue Arrow");
             yellowA = GameObject.Find("Yellow Arrow");
 
-            blueA.SetActive(false);
-            yellowA.SetActive(false);
+
         }
     }
 
