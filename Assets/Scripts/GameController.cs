@@ -372,17 +372,17 @@ public class GameController : MonoBehaviour
         b7.SetActive(false);
         b8.SetActive(false);
 
-        bool kiwi11 = false;
-        bool moa11 = false;
+        bool common11 = false;
+        bool endangered11 = false;
 
-        bool kiwi12 = false;
-        bool moa12 = false;
+        bool common12 = false;
+        bool endangered12 = false;
 
-        bool kiwi13 = false;
-        bool moa13 = false;
+        bool common13 = false;
+        bool endangered13 = false;
 
-        bool kiwi14 = false;
-        bool moa14 = false;
+        bool common14 = false;
+        bool endangered14 = false;
 
         foreach (GameObject b in birds)
         {
@@ -392,51 +392,51 @@ public class GameController : MonoBehaviour
             {
                 if (bird.species.Equals("common"))
                 {
-                    kiwi11 = true;
+                    common11 = true;
                 }
                 else
                 {
-                    moa11 = true;
+                    endangered11 = true;
                 }
             }
             if (b.layer == 12)
             {
                 if (bird.species.Equals("common"))
                 {
-                    kiwi12 = true;
+                    common12 = true;
                 }
                 else
                 {
-                    moa12 = true;
+                    endangered12 = true;
                 }
             }
             if (b.layer == 13)
             {
                 if (bird.species.Equals("common"))
                 {
-                    kiwi13 = true;
+                    common13 = true;
                 }
                 else
                 {
-                    moa13 = true;
+                    endangered13 = true;
                 }
             }
             if (b.layer == 14)
             {
                 if (bird.species.Equals("common"))
                 {
-                    kiwi14 = true;
+                    common14 = true;
                 }
                 else
                 {
-                    moa14 = true;
+                    endangered14 = true;
                 }
             }
         }
-        if ((kiwi11 && moa11) || (kiwi12 && moa12) || (kiwi13 && moa13) || (kiwi14 && moa14))
+        if ((common11 && endangered11) || (common12 && endangered12) || (common13 && endangered13) || (common14 && endangered14))
         {
             loseText.SetActive(true);
-            Debug.Log("" + (kiwi11 && moa11) + ", " + (kiwi12 && moa12) + ", " + (kiwi13 && moa13) + ", " + (kiwi14 && moa14));
+            Debug.Log("" + (common11 && endangered11) + ", " + (common12 && endangered12) + ", " + (common13 && endangered13) + ", " + (common14 && endangered14));
         }
         else
         {
