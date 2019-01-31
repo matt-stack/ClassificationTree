@@ -436,10 +436,12 @@ public class GameController : MonoBehaviour
         if ((common11 && endangered11) || (common12 && endangered12) || (common13 && endangered13) || (common14 && endangered14))
         {
             loseText.SetActive(true);
+            xSprite.SetActive(true);
             Debug.Log("" + (common11 && endangered11) + ", " + (common12 && endangered12) + ", " + (common13 && endangered13) + ", " + (common14 && endangered14));
         }
         else
         {
+            check.SetActive(true);
             winText.SetActive(true);
         }
     }
