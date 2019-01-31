@@ -28,6 +28,8 @@ public class NewMonoBehaviour : MonoBehaviour
     GameObject pickedColor;
     GameObject pickedHeight;
     GameObject pickedFlight;
+    GameObject yarrow;
+    GameObject barrow;
 
 
     private void Awake()
@@ -70,10 +72,14 @@ public class NewMonoBehaviour : MonoBehaviour
         pickedColor = GameObject.Find("Picked Color");
         pickedHeight = GameObject.Find("Picked Height");
         pickedFlight = GameObject.Find("Picked Flight?");
+        yarrow = GameObject.Find("Yellow Arrow");
+        barrow = GameObject.Find("Blue Arrow");
 
         if (firstGame)
         {
             b1.SetActive(false);
+            yarrow.SetActive(false);
+            barrow.SetActive(false);
         } else
         {
             b1.SetActive(true);
