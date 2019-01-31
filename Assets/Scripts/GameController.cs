@@ -55,7 +55,7 @@ public class GameController : MonoBehaviour
         button1.onClick.AddListener(OnClickZoom);
         button2.onClick.AddListener(OnClickHeight);
         button2.onClick.AddListener(OnClickZoom);
-        button3.onClick.AddListener(OnClickFlight);
+        button3.onClick.AddListener(OnClickBird);
         button3.onClick.AddListener(OnClickZoom);
         button4.onClick.AddListener(OnClickRestart);
         button4.onClick.AddListener(OnClickZoom);
@@ -64,7 +64,7 @@ public class GameController : MonoBehaviour
         button6.onClick.AddListener(OnClickZoom);
         button7.onClick.AddListener(OnClickHeightLeft);
         button7.onClick.AddListener(OnClickZoom);
-        button8.onClick.AddListener(OnClickFlightLeft);
+        button8.onClick.AddListener(OnClickBirdLeft);
         button8.onClick.AddListener(OnClickZoom);
         button1.onClick.AddListener(OnClickEndCheck);
         button2.onClick.AddListener(OnClickEndCheck);
@@ -77,11 +77,11 @@ public class GameController : MonoBehaviour
         Camera.main.transform.position = new Vector3(0f, 9.32f, -10f);
         b1 = GameObject.Find("Color_right");
         b2 = GameObject.Find("Height_right");
-        b3 = GameObject.Find("Flight_right");
+        b3 = GameObject.Find("Bird_right");
         b5 = GameObject.Find("BigData");
         b6 = GameObject.Find("Color_left");
         b7 = GameObject.Find("Height_left");
-        b8 = GameObject.Find("Flight_left");
+        b8 = GameObject.Find("Bird_left");
         b6.SetActive(false);
         b7.SetActive(false);
         b8.SetActive(false);
@@ -283,7 +283,7 @@ public class GameController : MonoBehaviour
     }
 
 
-    void OnClickFlight()
+    void OnClickBird()
     {
         //Output this to console when Button1 or Button3 is clicked
         foreach (GameObject b in birds)
@@ -315,7 +315,7 @@ public class GameController : MonoBehaviour
             b1.SetActive(false);
     }
 
-    void OnClickFlightLeft()
+    void OnClickBirdLeft()
     {
         //Output this to console when Button1 or Button3 is clicked
         foreach (GameObject b in birds)
@@ -390,7 +390,7 @@ public class GameController : MonoBehaviour
             bird = b.GetComponent<Bird>();
             if (b.layer == 11)
             {
-                if (bird.species.Equals("kiwi"))
+                if (bird.species.Equals("common"))
                 {
                     kiwi11 = true;
                 }
@@ -401,7 +401,7 @@ public class GameController : MonoBehaviour
             }
             if (b.layer == 12)
             {
-                if (bird.species.Equals("kiwi"))
+                if (bird.species.Equals("common"))
                 {
                     kiwi12 = true;
                 }
@@ -412,7 +412,7 @@ public class GameController : MonoBehaviour
             }
             if (b.layer == 13)
             {
-                if (bird.species.Equals("kiwi"))
+                if (bird.species.Equals("common"))
                 {
                     kiwi13 = true;
                 }
@@ -423,7 +423,7 @@ public class GameController : MonoBehaviour
             }
             if (b.layer == 14)
             {
-                if (bird.species.Equals("kiwi"))
+                if (bird.species.Equals("common"))
                 {
                     kiwi14 = true;
                 }

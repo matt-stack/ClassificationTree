@@ -11,7 +11,7 @@ public class NewMonoBehaviour : MonoBehaviour
     public int bigDataSize = 30;
     public GameObject birdPrefab;
     public Button button1, button2, button3, button4, button5, button6;
-//    public Text pickedColor, pickedHeight, pickedFlight;
+//    public Text pickedColor, pickedHeight, pickedBird;
     public bool bigDataClicked = false;
     public static bool firstGame = true;
 
@@ -27,7 +27,7 @@ public class NewMonoBehaviour : MonoBehaviour
     GameObject b6;
     GameObject pickedColor;
     GameObject pickedHeight;
-    GameObject pickedFlight;
+    GameObject pickedBird;
     GameObject yarrow;
     GameObject barrow;
 
@@ -58,7 +58,7 @@ public class NewMonoBehaviour : MonoBehaviour
 //        button1.onClick.AddListener(OnClickZoom);
         button2.onClick.AddListener(OnClickHeight);
 //        button2.onClick.AddListener(OnClickZoom);
-        button3.onClick.AddListener(OnClickFlight);
+        button3.onClick.AddListener(OnClickBird);
 //        button3.onClick.AddListener(OnClickZoom);
         button4.onClick.AddListener(OnClickRestart);
  //       button4.onClick.AddListener(OnClickZoom);
@@ -71,7 +71,7 @@ public class NewMonoBehaviour : MonoBehaviour
         b6 = GameObject.Find("Next");
         pickedColor = GameObject.Find("Picked Color");
         pickedHeight = GameObject.Find("Picked Height");
-        pickedFlight = GameObject.Find("Picked Flight?");
+        pickedBird = GameObject.Find("Picked Bird");
         yarrow = GameObject.Find("Yellow Arrow");
         barrow = GameObject.Find("Blue Arrow");
 
@@ -87,7 +87,7 @@ public class NewMonoBehaviour : MonoBehaviour
         b6.SetActive(false);
         pickedColor.SetActive(false);
         pickedHeight.SetActive(false);
-        pickedFlight.SetActive(false);
+        pickedBird.SetActive(false);
 
 
     }
@@ -172,7 +172,7 @@ public class NewMonoBehaviour : MonoBehaviour
         b6.SetActive(true);
 
     }
-    void OnClickFlight()
+    void OnClickBird()
     {
         //Output this to console when Button1 or Button3 is clicked
         foreach (GameObject b in birds)
@@ -190,7 +190,7 @@ public class NewMonoBehaviour : MonoBehaviour
         }
         clicked = true;
         b3.SetActive(false);
-        pickedFlight.SetActive(true);
+        pickedBird.SetActive(true);
 
     }
 

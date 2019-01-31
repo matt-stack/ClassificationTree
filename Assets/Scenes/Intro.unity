@@ -1827,7 +1827,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Flight?
+  m_Text: 'Bird
+
+'
 --- !u!222 &974556950
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2935,7 +2937,7 @@ GameObject:
   - component: {fileID: 1447236311}
   - component: {fileID: 1447236310}
   m_Layer: 5
-  m_Name: Picked Flight?
+  m_Name: Picked Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

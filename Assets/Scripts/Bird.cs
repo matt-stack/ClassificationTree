@@ -6,28 +6,48 @@ using Random = UnityEngine.Random;
 
 public class Bird : MonoBehaviour
 {
+    // Bird features
     public string color;
     public float height;
-    public bool flight;
+    public bool hasHat;
+    public bool hasLegs;
+    public bool isBird;
+
     public bool isRight = true;
 
     public string species;
     private string[] colors = { "yellow", "blue" };
-    private string[] speciess = { "kiwi", "moa" };
+    private string[] speciess = { "common", "endangered" };
 
-    private Sprite spriteB;
-    private Sprite spriteY;
+    // Sprites
+    private Sprite spriteB; // Blue
+    private Sprite spriteY; // Yellow
+    private Sprite spriteBL; // Blue w/ legs
+    private Sprite spriteYL; // Yellow w/ legs
+    private Sprite spriteBH; // Blue w/ hat
+    private Sprite spriteYH; // Yellow w/ hat
+    private Sprite spriteBHL; // Blue w/ hat + legs
+    private Sprite spriteYHL; // Yellow w/ hat + legs
+
+    // Size
     Vector2 scaleB = new Vector2(1, 1);
     Vector2 scaleS = new Vector2(0.5f, 0.5f);
+
     // Start is called before the first frame update
     void Start()
     {
+        // Load sprites
         gameObject.transform.position = new Vector2(0, 10);
         spriteB = Resources.Load<Sprite>("BirdHeroblue");
         spriteY = Resources.Load<Sprite>("BirdHero");
+
+        // Randomly assign features
         color = (Random.value > 0.5f) ? colors[0] : colors[1];
         height = Random.value * 2f;
-        flight = Random.value > 0.5f;
+        hasHat = (Random.value > 0.5f) ? true : false;
+        hasLegs = (Random.value > 0.5f) ? true : false;
+        isBird = true;
+
         if ((height > 1f && color.Equals("blue")) || (height <= 1f && color.Equals("yellow")))
         {
             species = speciess[1];
@@ -36,6 +56,7 @@ public class Bird : MonoBehaviour
         {
             species = speciess[0];
         }
+
         // sprite editing
         // color
         if (color == "yellow")
@@ -46,6 +67,7 @@ public class Bird : MonoBehaviour
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteB;
         }
+
         //size
         //gameObject.transform.Translate(1.0f, 1.0f, 1.0f);
         if (height >= 1)
