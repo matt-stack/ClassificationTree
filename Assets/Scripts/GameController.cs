@@ -5,13 +5,17 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 
+
+//TODO: Edit activeInHierarchy sections in filter functions
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
     public int birdPoolSize = 5;
     public int bigDataSize = 30;
     public GameObject birdPrefab;
-    public Button button1, button2, button3, button4, button5, button6, button7, button8;
+
+    //button declarations
+    public Button Color_r_b, Height_r_b, Bird_r_b, Restart_b, BigData_b, Color_l_b, Height_l_b, Bird_l_b, Hat_r_b, Legs_r_b, Hat_l_b, Legs_l_b;
     public bool bigDataClicked = false;
     public GameObject winText, loseText;
 
@@ -21,13 +25,17 @@ public class GameController : MonoBehaviour
     float m_FieldOfView;
     bool oneTime;
     bool clicked;
-    GameObject b1;
-    GameObject b2;
-    GameObject b3;
-    GameObject b5;
-    GameObject b6;
-    GameObject b7;
-    GameObject b8;
+    GameObject crb;         //color right
+    GameObject hrb;         //height right
+    GameObject brb;         //bird right
+    GameObject bigdata;     //big data button
+    GameObject clb;         //color left
+    GameObject hlb;         //height left
+    GameObject blb;         //bird left
+    GameObject trb;         //hat right
+    GameObject lrb;         //legs right
+    GameObject tlb;         //hat left
+    GameObject llb;         //legs left
 
     private void Awake()
     {
@@ -51,40 +59,61 @@ public class GameController : MonoBehaviour
     {
         m_FieldOfView = 63f;
         //Calls the TaskOnClick/TaskWithParameters/ButtonClicked method when you click the Button
-        button1.onClick.AddListener(OnClickColor);
-        button1.onClick.AddListener(OnClickZoom);
-        button2.onClick.AddListener(OnClickHeight);
-        button2.onClick.AddListener(OnClickZoom);
-        button3.onClick.AddListener(OnClickBird);
-        button3.onClick.AddListener(OnClickZoom);
-        button4.onClick.AddListener(OnClickRestart);
-        button4.onClick.AddListener(OnClickZoom);
-        button5.onClick.AddListener(OnClickBigData);
-        button6.onClick.AddListener(OnClickColorLeft);
-        button6.onClick.AddListener(OnClickZoom);
-        button7.onClick.AddListener(OnClickHeightLeft);
-        button7.onClick.AddListener(OnClickZoom);
-        button8.onClick.AddListener(OnClickBirdLeft);
-        button8.onClick.AddListener(OnClickZoom);
-        button1.onClick.AddListener(OnClickEndCheck);
-        button2.onClick.AddListener(OnClickEndCheck);
-        button3.onClick.AddListener(OnClickEndCheck);
-        button4.onClick.AddListener(OnClickEndCheck);
-        button6.onClick.AddListener(OnClickEndCheck);
-        button7.onClick.AddListener(OnClickEndCheck);
-        button8.onClick.AddListener(OnClickEndCheck);
+        Color_r_b.onClick.AddListener(OnClickColor);
+        Color_r_b.onClick.AddListener(OnClickZoom);
+        Height_r_b.onClick.AddListener(OnClickHeight);
+        Height_r_b.onClick.AddListener(OnClickZoom);
+        Bird_r_b.onClick.AddListener(OnClickBird);
+        Bird_r_b.onClick.AddListener(OnClickZoom);
+        Restart_b.onClick.AddListener(OnClickRestart);
+        Restart_b.onClick.AddListener(OnClickZoom);
+        BigData_b.onClick.AddListener(OnClickBigData);
+        Color_l_b.onClick.AddListener(OnClickColorLeft);
+        Color_l_b.onClick.AddListener(OnClickZoom);
+        Height_l_b.onClick.AddListener(OnClickHeightLeft);
+        Height_l_b.onClick.AddListener(OnClickZoom);
+        Bird_l_b.onClick.AddListener(OnClickBirdLeft);
+        Bird_l_b.onClick.AddListener(OnClickZoom);
+        
+        Hat_r_b.onClick.AddListener(OnClickHat);
+        Hat_r_b.onClick.AddListener(OnClickZoom);
+        Legs_r_b.onClick.AddListener(OnClickLegs);
+        Legs_r_b.onClick.AddListener(OnClickZoom);
+        Hat_l_b.onClick.AddListener(OnClickHatLeft);
+        Hat_l_b.onClick.AddListener(OnClickZoom);
+        Legs_l_b.onClick.AddListener(OnClickLegsLeft);
+        Legs_l_b.onClick.AddListener(OnClickZoom);
+
+
+        Color_r_b.onClick.AddListener(OnClickEndCheck);
+        Height_r_b.onClick.AddListener(OnClickEndCheck);
+        Bird_r_b.onClick.AddListener(OnClickEndCheck);
+        Restart_b.onClick.AddListener(OnClickEndCheck);
+        Color_l_b.onClick.AddListener(OnClickEndCheck);
+        Height_l_b.onClick.AddListener(OnClickEndCheck);
+        Bird_l_b.onClick.AddListener(OnClickEndCheck);
+        
+
+
 
         Camera.main.transform.position = new Vector3(0f, 9.32f, -10f);
-        b1 = GameObject.Find("Color_right");
-        b2 = GameObject.Find("Height_right");
-        b3 = GameObject.Find("Bird_right");
-        b5 = GameObject.Find("BigData");
-        b6 = GameObject.Find("Color_left");
-        b7 = GameObject.Find("Height_left");
-        b8 = GameObject.Find("Bird_left");
-        b6.SetActive(false);
-        b7.SetActive(false);
-        b8.SetActive(false);
+       
+        crb = GameObject.Find("Color_right");
+        hrb = GameObject.Find("Height_right");
+        brb = GameObject.Find("Bird_right");
+        trb = GameObject.Find("Hat_right");
+        lrb = GameObject.Find("Legs_right");
+        bigdata = GameObject.Find("BigData");
+        clb = GameObject.Find("Color_left");
+        hlb = GameObject.Find("Height_left");
+        blb = GameObject.Find("Bird_left");
+        tlb = GameObject.Find("Hat_left");
+        llb = GameObject.Find("Legs_left");
+        clb.SetActive(false);
+        hlb.SetActive(false);
+        blb.SetActive(false);
+        tlb.SetActive(false);
+        llb.SetActive(false);
 
     }
 
@@ -97,7 +126,7 @@ public class GameController : MonoBehaviour
                 birds.Add((GameObject)Instantiate(birdPrefab, objectPoolPosition, Quaternion.identity));
             }
             bigDataClicked = true;
-            b5.SetActive(false);
+            bigdata.SetActive(false);
         }
 
     }
@@ -132,9 +161,11 @@ public class GameController : MonoBehaviour
                     else
                         bird.gameObject.layer = 8;
 
-                    b7.SetActive(false);
-                    b8.SetActive(true);
-                    b6.SetActive(true);
+                    hlb.SetActive(false);
+                    blb.SetActive(true);
+                    clb.SetActive(true);
+                    tlb.SetActive(true);
+                    llb.SetActive(true);
                 }
                 else
                 {
@@ -149,12 +180,12 @@ public class GameController : MonoBehaviour
             }
         }
         clicked = true;
-        b2.SetActive(false);
-        b5.SetActive(false);
-        if (!b1.activeInHierarchy)
-            b3.SetActive(false);
-        if (!b3.activeInHierarchy)
-            b1.SetActive(false);
+        hrb.SetActive(false);
+        bigdata.SetActive(false);
+        if (!crb.activeInHierarchy)
+            brb.SetActive(false);
+        if (!brb.activeInHierarchy)
+            crb.SetActive(false);
     }
 
     void OnClickHeightLeft()
@@ -190,12 +221,12 @@ public class GameController : MonoBehaviour
             }
         }
         clicked = true;
-        b5.SetActive(false);
-        b7.SetActive(false);
-        if (!b8.activeInHierarchy)
-            b6.SetActive(false);
-        if (!b6.activeInHierarchy)
-            b8.SetActive(false);
+        bigdata.SetActive(false);
+        hlb.SetActive(false);
+        if (!blb.activeInHierarchy)
+            clb.SetActive(false);
+        if (!clb.activeInHierarchy)
+            blb.SetActive(false);
     }
 
     void OnClickColor()
@@ -217,9 +248,11 @@ public class GameController : MonoBehaviour
                     else
                         bird.gameObject.layer = 8;
 
-                    b6.SetActive(false);
-                    b7.SetActive(true);
-                    b8.SetActive(true);
+                    clb.SetActive(false);
+                    hlb.SetActive(true);
+                    blb.SetActive(true);
+                    tlb.SetActive(true);
+                    llb.SetActive(true);
                 }
                 else
                 {
@@ -234,12 +267,12 @@ public class GameController : MonoBehaviour
             }
         }
         clicked = true;
-        b1.SetActive(false);
-        b5.SetActive(false);
-        if (!b2.activeInHierarchy)
-            b3.SetActive(false);
-        if (!b3.activeInHierarchy)
-            b2.SetActive(false);
+        crb.SetActive(false);
+        bigdata.SetActive(false);
+        if (!hrb.activeInHierarchy)
+            brb.SetActive(false);
+        if (!brb.activeInHierarchy)
+            hrb.SetActive(false);
     }
     void OnClickColorLeft()
     {
@@ -274,12 +307,12 @@ public class GameController : MonoBehaviour
             }
         }
         clicked = true;
-        b5.SetActive(false);
-        b6.SetActive(false);
-        if (!b7.activeInHierarchy)
-            b8.SetActive(false);
-        if (!b8.activeInHierarchy)
-            b7.SetActive(false);
+        bigdata.SetActive(false);
+        clb.SetActive(false);
+        if (!hlb.activeInHierarchy)
+            blb.SetActive(false);
+        if (!blb.activeInHierarchy)
+            hlb.SetActive(false);
     }
 
 
@@ -296,9 +329,11 @@ public class GameController : MonoBehaviour
                 {
                     bird.gameObject.layer = 8;
 
-                    b6.SetActive(true);
-                    b7.SetActive(true);
-                    b8.SetActive(false);
+                    clb.SetActive(true);
+                    hlb.SetActive(true);
+                    blb.SetActive(false);
+                    tlb.SetActive(true);
+                    llb.SetActive(true);
                 }
                 else
                 {
@@ -307,12 +342,12 @@ public class GameController : MonoBehaviour
             }
         }
         clicked = true;
-        b3.SetActive(false);
-        b5.SetActive(false);
-        if (!b1.activeInHierarchy)
-            b2.SetActive(false);
-        if (!b2.activeInHierarchy)
-            b1.SetActive(false);
+        brb.SetActive(false);
+        bigdata.SetActive(false);
+        if (!crb.activeInHierarchy)
+            hrb.SetActive(false);
+        if (!hrb.activeInHierarchy)
+            crb.SetActive(false);
     }
 
     void OnClickBirdLeft()
@@ -335,28 +370,198 @@ public class GameController : MonoBehaviour
             }
         }
         clicked = true;
-        b5.SetActive(false);
-        b8.SetActive(false);
-        if (!b7.activeInHierarchy)
-            b6.SetActive(false);
-        if (!b6.activeInHierarchy)
-            b7.SetActive(false);
+        bigdata.SetActive(false);
+        blb.SetActive(false);
+        if (!hlb.activeInHierarchy)
+            clb.SetActive(false);
+        if (!clb.activeInHierarchy)
+            hlb.SetActive(false);
     }
+
+
+    void OnClickHat()
+    {
+        foreach (GameObject b in birds)
+        {
+            Bird bird;
+            bird = b.GetComponent<Bird>();
+            if (bird.isRight)
+            {
+                if (clicked == false)
+                {
+                    if (bird.hasHat)
+                    {
+                        bird.gameObject.layer = 9;
+                        bird.isRight = false;
+                    }
+                    else
+                        bird.gameObject.layer = 8;
+
+                    hlb.SetActive(true);
+                    blb.SetActive(true);
+                    clb.SetActive(true);
+                    tlb.SetActive(false);
+                    llb.SetActive(true);
+                }
+                else
+                {
+                    if (bird.hasHat)
+                    {
+                        bird.gameObject.layer = 14;
+                        bird.isRight = false;
+                    }
+                    else
+                        bird.gameObject.layer = 13;
+                }
+            }
+        }
+        clicked = true;
+        trb.SetActive(false);
+        bigdata.SetActive(false);
+
+    }
+
+    void OnClickHatLeft()
+    {
+        //Output this to console when Button1 or Button3 is clicked
+        foreach (GameObject b in birds)
+        {
+            Bird bird;
+            bird = b.GetComponent<Bird>();
+            if (!bird.isRight)
+            {
+                if (clicked == false)
+                {
+                    if (!bird.hasHat)
+                    {
+                        bird.gameObject.layer = 9;
+                        //bird.right = false;
+                    }
+                    else
+                        bird.gameObject.layer = 8;
+
+                }
+                else
+                {
+                    if (!bird.hasHat)
+                    {
+                        bird.gameObject.layer = 12;
+                        // bird.right = false;
+                    }
+                    else
+                        bird.gameObject.layer = 11;
+                }
+            }
+        }
+        clicked = true;
+        bigdata.SetActive(false);
+        tlb.SetActive(false);
+        
+    }
+
+
+    void OnClickLegs()
+    {
+        foreach (GameObject b in birds)
+        {
+            Bird bird;
+            bird = b.GetComponent<Bird>();
+            if (bird.isRight)
+            {
+                if (clicked == false)
+                {
+                    if (bird.hasLegs)
+                    {
+                        bird.gameObject.layer = 9;
+                        bird.isRight = false;
+                    }
+                    else
+                        bird.gameObject.layer = 8;
+
+                    hlb.SetActive(true);
+                    blb.SetActive(true);
+                    clb.SetActive(true);
+                    tlb.SetActive(true);
+                    llb.SetActive(false);
+                }
+                else
+                {
+                    if (bird.hasLegs)
+                    {
+                        bird.gameObject.layer = 14;
+                        bird.isRight = false;
+                    }
+                    else
+                        bird.gameObject.layer = 13;
+                }
+            }
+        }
+        clicked = true;
+        lrb.SetActive(false);
+        bigdata.SetActive(false);
+
+    }
+
+    void OnClickLegsLeft()
+    {
+        //Output this to console when Button1 or Button3 is clicked
+        foreach (GameObject b in birds)
+        {
+            Bird bird;
+            bird = b.GetComponent<Bird>();
+            if (!bird.isRight)
+            {
+                if (clicked == false)
+                {
+                    if (!bird.hasLegs)
+                    {
+                        bird.gameObject.layer = 9;
+                        //bird.right = false;
+                    }
+                    else
+                        bird.gameObject.layer = 8;
+
+                }
+                else
+                {
+                    if (!bird.hasLegs)
+                    {
+                        bird.gameObject.layer = 12;
+                        // bird.right = false;
+                    }
+                    else
+                        bird.gameObject.layer = 11;
+                }
+            }
+        }
+        clicked = true;
+        bigdata.SetActive(false);
+        llb.SetActive(false);
+
+    }
+
+
 
     void OnClickRestart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+
+    //TODO: Edit OnClickEndCheck()
     void OnClickEndCheck()
     {
         int count = 0;
-        count += b1.activeInHierarchy ? 1 : 0;
-        count += b2.activeInHierarchy ? 1 : 0;
-        count += b3.activeInHierarchy ? 1 : 0;
-        count += b6.activeInHierarchy ? 1 : 0;
-        count += b7.activeInHierarchy ? 1 : 0;
-        count += b8.activeInHierarchy ? 1 : 0;
+        count += crb.activeInHierarchy ? 1 : 0;
+        count += hrb.activeInHierarchy ? 1 : 0;
+        count += brb.activeInHierarchy ? 1 : 0;
+        count += trb.activeInHierarchy ? 1 : 0;
+        count += lrb.activeInHierarchy ? 1 : 0;
+        count += clb.activeInHierarchy ? 1 : 0;
+        count += hlb.activeInHierarchy ? 1 : 0;
+        count += blb.activeInHierarchy ? 1 : 0;
+        count += tlb.activeInHierarchy ? 1 : 0;
+        count += llb.activeInHierarchy ? 1 : 0;
         if(count < 1)
         {
             endGame();
@@ -365,12 +570,16 @@ public class GameController : MonoBehaviour
 
     private void endGame()
     {
-        b1.SetActive(false);
-        b2.SetActive(false);
-        b3.SetActive(false);
-        b6.SetActive(false);
-        b7.SetActive(false);
-        b8.SetActive(false);
+        crb.SetActive(false);
+        hrb.SetActive(false);
+        brb.SetActive(false);
+        trb.SetActive(false);
+        lrb.SetActive(false);
+        clb.SetActive(false);
+        hlb.SetActive(false);
+        blb.SetActive(false);
+        tlb.SetActive(false);
+        llb.SetActive(false);
 
         bool common11 = false;
         bool endangered11 = false;
