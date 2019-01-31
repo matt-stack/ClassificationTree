@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     //button declarations
     public Button Color_r_b, Height_r_b, Bird_r_b, Restart_b, BigData_b, Color_l_b, Height_l_b, Bird_l_b, Hat_r_b, Legs_r_b, Hat_l_b, Legs_l_b;
     public bool bigDataClicked = false;
-    public GameObject winText, loseText;
+    public GameObject winText, loseText, xSprite, check;
 
     private List<GameObject> birds;
     private Vector2 objectPoolPosition = new Vector2(0, 5);
@@ -645,10 +645,12 @@ public class GameController : MonoBehaviour
         if ((common11 && endangered11) || (common12 && endangered12) || (common13 && endangered13) || (common14 && endangered14))
         {
             loseText.SetActive(true);
+            xSprite.SetActive(true);
             Debug.Log("" + (common11 && endangered11) + ", " + (common12 && endangered12) + ", " + (common13 && endangered13) + ", " + (common14 && endangered14));
         }
         else
         {
+            check.SetActive(true);
             winText.SetActive(true);
         }
     }
