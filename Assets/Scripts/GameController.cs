@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
     private Vector2 objectPoolPosition = new Vector2(0, 5);
 
     float m_FieldOfView;
-    bool oneTime;
+    public bool oneTime;
     bool clicked;
     GameObject crb;         //color right
     GameObject hrb;         //height right
@@ -36,6 +36,22 @@ public class GameController : MonoBehaviour
     GameObject lrb;         //legs right
     GameObject tlb;         //hat left
     GameObject llb;         //legs left
+
+    public GameObject cta;         //color top arrow
+    public GameObject cla;         //color left arrow
+    public GameObject cra;         //color right arrow
+    public GameObject hta;         //height top arrow
+    public GameObject hla;         //height left arrow
+    public GameObject hra;         //height right arrow
+    public GameObject hhta;         //hat top arrow
+    public GameObject hhla;         //hat left arrow
+    public GameObject hhra;         //hat right arrow
+    public GameObject lta;         //leg top arrow
+    public GameObject lla;         //leg left arrow
+    public GameObject lra;         //leg left arrow
+    public GameObject bta;         //bird top arrow
+    public GameObject bla;         //bird left arrow
+    public GameObject bra;         //bird right arrow
 
     private void Awake()
     {
@@ -92,8 +108,6 @@ public class GameController : MonoBehaviour
         Color_l_b.onClick.AddListener(OnClickEndCheck);
         Height_l_b.onClick.AddListener(OnClickEndCheck);
         Bird_l_b.onClick.AddListener(OnClickEndCheck);
-        
-
 
 
         Camera.main.transform.position = new Vector3(0f, 9.32f, -10f);
@@ -114,6 +128,22 @@ public class GameController : MonoBehaviour
         blb.SetActive(false);
         tlb.SetActive(false);
         llb.SetActive(false);
+
+        cta.SetActive(false);         //color top arrow
+        cla.SetActive(false);         //color left arrow
+        cra.SetActive(false);         //color right arrow
+        hta.SetActive(false);         //height top arrow
+        hla.SetActive(false);         //height left arrow
+        hra.SetActive(false);         //height right arrow
+        hhta.SetActive(false);         //hat top arrow
+        hhla.SetActive(false);         //hat left arrow
+        hhra.SetActive(false);         //hat right arrow
+        lta.SetActive(false);           //leg top arrow
+        lla.SetActive(false);         //leg left arrow
+        lra.SetActive(false);         //leg right arrow
+        bta.SetActive(false);         //bird top arrow
+        bla.SetActive(false);         //bird left arrow
+        bra.SetActive(false);         //bird right arrow
 
     }
 
@@ -544,7 +574,7 @@ public class GameController : MonoBehaviour
 
     void OnClickRestart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 

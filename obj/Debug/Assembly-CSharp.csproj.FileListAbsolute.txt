@@ -361,3 +361,7 @@
 /Users/Joel/Desktop/CISC374/ClassificationTree/obj/Debug/Assembly-CSharp.csproj.CopyComplete
 /Users/Joel/Desktop/CISC374/ClassificationTree/obj/Debug/Assembly-CSharp.dll
 /Users/Joel/Desktop/CISC374/ClassificationTree/obj/Debug/Assembly-CSharp.pdb
+/Users/mattstack/Desktop/CISC374/ClassificationTree/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
+/Users/mattstack/Desktop/CISC374/ClassificationTree/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
+/Users/mattstack/Desktop/CISC374/ClassificationTree/obj/Debug/Assembly-CSharp.dll
+/Users/mattstack/Desktop/CISC374/ClassificationTree/obj/Debug/Assembly-CSharp.pdb
