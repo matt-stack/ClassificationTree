@@ -32,7 +32,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Bugs
 
 * The birds can sometimes jump out of the tree structure, either by pushing a button too fast or by the physics of unity when they spawn.
-* Game does not currently recongize a finished game (right or wrong), unsure why this is there is previously working code that notified the player but it has been lost
+* Game does not always recongize a finished game (right or wrong).
 * Not so much as bug just bad design but the game text on the intro level is hard to spot withput knowing its there
 
 ## Future plans
