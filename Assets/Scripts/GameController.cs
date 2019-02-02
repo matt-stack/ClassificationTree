@@ -10,7 +10,7 @@ using System;
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
-    public int birdPoolSize = 5;
+    public int birdPoolSize = 10;
     public int bigDataSize = 30;
     public GameObject birdPrefab;
 

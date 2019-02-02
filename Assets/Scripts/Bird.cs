@@ -40,6 +40,12 @@ public class Bird : MonoBehaviour
         gameObject.transform.position = new Vector2(0, 10);
         spriteB = Resources.Load<Sprite>("BirdHeroblue");
         spriteY = Resources.Load<Sprite>("BirdHero");
+        spriteBL = Resources.Load<Sprite>("BirdHeroblueLegs");
+        spriteYL = Resources.Load<Sprite>("BirdHeroLegs");
+        spriteBH = Resources.Load<Sprite>("Blue Hat Bird");
+        spriteYH = Resources.Load<Sprite>("Yellow Hat Bird");
+        spriteBHL = Resources.Load<Sprite>("Blue Hat + Legs Bird");
+        spriteYHL = Resources.Load<Sprite>("Yellow Hat + Legs Bird");
 
         // Randomly assign features
         color = (Random.value > 0.5f) ? colors[0] : colors[1];
@@ -56,16 +62,43 @@ public class Bird : MonoBehaviour
         {
             species = speciess[0];
         }
-
+        
         // sprite editing
         // color
-        if (color == "yellow")
+        if (color == "yellow" && !hasHat && !hasLegs)
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteY;
         }
-        else if (color == "blue")
+        else if (color == "blue" && !hasHat && !hasLegs)
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteB;
+        }
+        else if (color == "yellow" && !hasHat && hasLegs)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteYL;
+        }
+        else if (color == "blue" && !hasHat && hasLegs)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteBL;
+        }
+        else if (color == "yellow" && hasHat && !hasLegs)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteYH;
+        }
+        else if (color == "blue" && hasHat && !hasLegs)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteBH;
+        }
+        else if (color == "yellow" && hasHat && hasLegs)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteYHL;
+        }
+        else if (color == "blue" && hasHat && hasLegs)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = spriteBHL;
+        } else
+        {
+            Debug.Log("No valid sprite");
         }
 
         //size
