@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 8619753}
   - component: {fileID: 8619754}
   m_Layer: 0
-  m_Name: Small Arrow Right
+  m_Name: Big Arrow Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,7 +215,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 48a1e0ec08a594098b87388d7ce3d610, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5db100d7b250245bcbb04b5b87f8c3f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 33818476}
   - component: {fileID: 33818475}
   m_Layer: 0
-  m_Name: Hat Arrow
+  m_Name: No Hat Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -469,7 +469,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 419fa3cdcf3b44a72831f952cff30d9a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a455436b25b646858212c733808d336, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -886,7 +886,7 @@ GameObject:
   - component: {fileID: 77298985}
   - component: {fileID: 77298984}
   m_Layer: 0
-  m_Name: Small Arrow
+  m_Name: Big Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -929,7 +929,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 48a1e0ec08a594098b87388d7ce3d610, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5db100d7b250245bcbb04b5b87f8c3f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1244,7 +1244,7 @@ GameObject:
   - component: {fileID: 137853602}
   - component: {fileID: 137853601}
   m_Layer: 0
-  m_Name: Legs Arrow
+  m_Name: No Legs Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1287,7 +1287,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 54a412e28f54f47f280ee52d1d92d5d4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b2b24ed168d64ae0bf1da56d6f13f40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1408,7 +1408,7 @@ GameObject:
   - component: {fileID: 191797510}
   - component: {fileID: 191797509}
   m_Layer: 0
-  m_Name: Blue Arrow
+  m_Name: Yellow Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1451,7 +1451,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bf18da7e69b454e0694104a5878389c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2bff4ed8a6b5c4755aa93297c0432e80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1493,7 +1493,7 @@ GameObject:
   - component: {fileID: 202886337}
   - component: {fileID: 202886338}
   m_Layer: 0
-  m_Name: No Legs Arrow Right
+  m_Name: Legs Arrow Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1555,7 +1555,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7b2b24ed168d64ae0bf1da56d6f13f40, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54a412e28f54f47f280ee52d1d92d5d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2380,7 +2380,7 @@ GameObject:
   - component: {fileID: 395062373}
   - component: {fileID: 395062372}
   m_Layer: 0
-  m_Name: Big Arrow Right
+  m_Name: Small Arrow Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2423,7 +2423,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5db100d7b250245bcbb04b5b87f8c3f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48a1e0ec08a594098b87388d7ce3d610, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3215,7 +3215,7 @@ GameObject:
   - component: {fileID: 534363654}
   - component: {fileID: 534363653}
   m_Layer: 0
-  m_Name: No Legs Arrow
+  m_Name: Legs Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3258,7 +3258,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7b2b24ed168d64ae0bf1da56d6f13f40, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54a412e28f54f47f280ee52d1d92d5d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3697,7 +3697,7 @@ GameObject:
   - component: {fileID: 560758126}
   - component: {fileID: 560758125}
   m_Layer: 0
-  m_Name: Big Arrow Left
+  m_Name: Small Arrow Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3740,7 +3740,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5db100d7b250245bcbb04b5b87f8c3f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48a1e0ec08a594098b87388d7ce3d610, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6192,7 +6192,7 @@ GameObject:
   - component: {fileID: 1066075372}
   - component: {fileID: 1066075371}
   m_Layer: 0
-  m_Name: Legs Arrow Right
+  m_Name: No Legs Arrow Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6235,7 +6235,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 54a412e28f54f47f280ee52d1d92d5d4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b2b24ed168d64ae0bf1da56d6f13f40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6351,7 +6351,7 @@ GameObject:
   - component: {fileID: 1115143260}
   - component: {fileID: 1115143259}
   m_Layer: 0
-  m_Name: Big Arrow
+  m_Name: Small Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6394,7 +6394,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5db100d7b250245bcbb04b5b87f8c3f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48a1e0ec08a594098b87388d7ce3d610, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6515,7 +6515,7 @@ GameObject:
   - component: {fileID: 1177323871}
   - component: {fileID: 1177323870}
   m_Layer: 0
-  m_Name: Yellow Arrow
+  m_Name: Blue Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6558,7 +6558,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2bff4ed8a6b5c4755aa93297c0432e80, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf18da7e69b454e0694104a5878389c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6639,7 +6639,7 @@ GameObject:
   - component: {fileID: 1187057900}
   - component: {fileID: 1187057899}
   m_Layer: 0
-  m_Name: No Hat Arrow
+  m_Name: Hat Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6682,7 +6682,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0a455436b25b646858212c733808d336, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 419fa3cdcf3b44a72831f952cff30d9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6911,7 +6911,7 @@ GameObject:
   - component: {fileID: 1256129047}
   - component: {fileID: 1256129046}
   m_Layer: 0
-  m_Name: Blue Arrow Right
+  m_Name: Yellow Arrow Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6954,7 +6954,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bf18da7e69b454e0694104a5878389c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2bff4ed8a6b5c4755aa93297c0432e80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7524,7 +7524,7 @@ GameObject:
   - component: {fileID: 1538017712}
   - component: {fileID: 1538017711}
   m_Layer: 0
-  m_Name: Yellow Arrow Left
+  m_Name: Blue Arrow Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7567,7 +7567,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2bff4ed8a6b5c4755aa93297c0432e80, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf18da7e69b454e0694104a5878389c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8135,7 +8135,7 @@ GameObject:
   - component: {fileID: 1623375605}
   - component: {fileID: 1623375606}
   m_Layer: 0
-  m_Name: Yellow Arrow Right
+  m_Name: Blue Arrow Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8197,7 +8197,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2bff4ed8a6b5c4755aa93297c0432e80, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf18da7e69b454e0694104a5878389c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8219,7 +8219,7 @@ GameObject:
   - component: {fileID: 1645861053}
   - component: {fileID: 1645861052}
   m_Layer: 0
-  m_Name: Blue Arrow Left
+  m_Name: Yellow Arrow Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8262,7 +8262,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bf18da7e69b454e0694104a5878389c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2bff4ed8a6b5c4755aa93297c0432e80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8769,7 +8769,7 @@ GameObject:
   - component: {fileID: 1873976915}
   - component: {fileID: 1873976914}
   m_Layer: 0
-  m_Name: Hat Arrow Right
+  m_Name: No Hat Arrow Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8812,7 +8812,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 419fa3cdcf3b44a72831f952cff30d9a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a455436b25b646858212c733808d336, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9220,7 +9220,7 @@ GameObject:
   - component: {fileID: 1993874730}
   - component: {fileID: 1993874729}
   m_Layer: 0
-  m_Name: Small Arrow Left
+  m_Name: Big Arrow Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9263,7 +9263,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 48a1e0ec08a594098b87388d7ce3d610, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5db100d7b250245bcbb04b5b87f8c3f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9492,7 +9492,7 @@ GameObject:
   - component: {fileID: 1997845540}
   - component: {fileID: 1997845541}
   m_Layer: 0
-  m_Name: No Hat Arrow Right
+  m_Name: Hat Arrow Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9554,7 +9554,7 @@ SpriteRenderer:
   m_SortingLayerID: -370345469
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0a455436b25b646858212c733808d336, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 419fa3cdcf3b44a72831f952cff30d9a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
