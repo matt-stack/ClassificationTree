@@ -51,8 +51,12 @@ Add additional notes about how to deploy this on a live system
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
+## Bugs
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* The birds can sometimes jump out of the tree structure, either by pushing a button too fast or by the physics of unity when they spawn.
+* Game very rarely does not recongize a finished game (right or wrong), unsure why this is
+* Not so much as bug just bad design but the game text on the intro level is hard to spot withput knowing its there
+
+## Future plans
+* If we kept working, we would want to revamp the UI, make it more friendly and attention-grabbing. Also we would have liked to implement a better 'big data' feature to show how important classification trees can be for big data. We would turn the current big data button (which just increase the bird count to 30, and while it is fun it doesnt work well with the level size) into its own level that can manage a few hundred birds aka representation of data.
+
