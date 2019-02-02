@@ -179,9 +179,9 @@ public class GameController : MonoBehaviour
         {
             Bird bird;
             bird = b.GetComponent<Bird>();
-            if (bird.isRight)
-            {
-                if (clicked == false)
+            //if (bird.isRight)
+            //{
+                if (bird.gameObject.layer == 10)
                 {
                     if (bird.height > 1)
                     {
@@ -197,7 +197,7 @@ public class GameController : MonoBehaviour
                     tlb.SetActive(true);
                     llb.SetActive(true);
                 }
-                else
+                else if(bird.gameObject.layer == 8)
                 {
                     if (bird.height > 1)
                     {
@@ -207,15 +207,11 @@ public class GameController : MonoBehaviour
                     else
                         bird.gameObject.layer = 13;
                 }
-            }
+            //}
         }
         clicked = true;
         hrb.SetActive(false);
         bigdata.SetActive(false);
-        if (!crb.activeInHierarchy)
-            brb.SetActive(false);
-        if (!brb.activeInHierarchy)
-            crb.SetActive(false);
     }
 
     void OnClickHeightLeft()
@@ -225,20 +221,7 @@ public class GameController : MonoBehaviour
         {
             Bird bird;
             bird = b.GetComponent<Bird>();
-            if (!bird.isRight)
-            {
-                if (clicked == false)
-                {
-                    if (bird.height > 1)
-                    {
-                        bird.gameObject.layer = 9;
-                        //bird.right = false;
-                    }
-                    else
-                        bird.gameObject.layer = 8;
-
-                }
-                else
+                if(bird.gameObject.layer == 9)
                 {
                     if (bird.height > 1)
                     {
@@ -248,15 +231,10 @@ public class GameController : MonoBehaviour
                     else
                         bird.gameObject.layer = 11;
                 }
-            }
         }
         clicked = true;
         bigdata.SetActive(false);
         hlb.SetActive(false);
-        if (!blb.activeInHierarchy)
-            clb.SetActive(false);
-        if (!clb.activeInHierarchy)
-            blb.SetActive(false);
     }
 
     void OnClickColor()
@@ -266,43 +244,37 @@ public class GameController : MonoBehaviour
         {
             Bird bird;
             bird = b.GetComponent<Bird>();
-            if (bird.isRight)
-            {
-                if (clicked == false)
-                {
-                    if (bird.color.Equals("blue"))
-                    {
-                        bird.gameObject.layer = 9;
-                        bird.isRight = false;
-                    }
-                    else
-                        bird.gameObject.layer = 8;
 
-                    clb.SetActive(false);
-                    hlb.SetActive(true);
-                    blb.SetActive(true);
-                    tlb.SetActive(true);
-                    llb.SetActive(true);
+            if (bird.gameObject.layer == 10)
+            {
+                if (bird.color.Equals("blue"))
+                {
+                    bird.gameObject.layer = 9;
+                    bird.isRight = false;
                 }
                 else
+                    bird.gameObject.layer = 8;
+
+                clb.SetActive(false);
+                hlb.SetActive(true);
+                blb.SetActive(true);
+                tlb.SetActive(true);
+                llb.SetActive(true);
+            }
+            else if (bird.gameObject.layer == 8)
+            {
+                if (bird.color.Equals("blue"))
                 {
-                    if (bird.color.Equals("blue"))
-                    {
-                        bird.gameObject.layer = 14;
-                        bird.isRight = false;
-                    }
-                    else
-                        bird.gameObject.layer = 13;
+                    bird.gameObject.layer = 14;
+                    bird.isRight = false;
                 }
+                else
+                    bird.gameObject.layer = 13;
             }
         }
         clicked = true;
         crb.SetActive(false);
         bigdata.SetActive(false);
-        if (!hrb.activeInHierarchy)
-            brb.SetActive(false);
-        if (!brb.activeInHierarchy)
-            hrb.SetActive(false);
     }
     void OnClickColorLeft()
     {
@@ -311,20 +283,7 @@ public class GameController : MonoBehaviour
         {
             Bird bird;
             bird = b.GetComponent<Bird>();
-            if (!bird.isRight)
-            {
-                if (clicked == false)
-                {
-                    if (bird.color.Equals("blue"))
-                    {
-                        bird.gameObject.layer = 9;
-                        // bird.right = false;
-
-                    }
-                    else
-                        bird.gameObject.layer = 8;
-                }
-                else
+                if (bird.gameObject.layer == 9)
                 {
                     if (bird.color.Equals("blue"))
                     {
@@ -334,15 +293,10 @@ public class GameController : MonoBehaviour
                     else
                         bird.gameObject.layer = 11;
                 }
-            }
         }
         clicked = true;
         bigdata.SetActive(false);
         clb.SetActive(false);
-        if (!hlb.activeInHierarchy)
-            blb.SetActive(false);
-        if (!blb.activeInHierarchy)
-            hlb.SetActive(false);
     }
 
 
@@ -374,10 +328,6 @@ public class GameController : MonoBehaviour
         clicked = true;
         brb.SetActive(false);
         bigdata.SetActive(false);
-        if (!crb.activeInHierarchy)
-            hrb.SetActive(false);
-        if (!hrb.activeInHierarchy)
-            crb.SetActive(false);
     }
 
     void OnClickBirdLeft()
@@ -402,10 +352,6 @@ public class GameController : MonoBehaviour
         clicked = true;
         bigdata.SetActive(false);
         blb.SetActive(false);
-        if (!hlb.activeInHierarchy)
-            clb.SetActive(false);
-        if (!clb.activeInHierarchy)
-            hlb.SetActive(false);
     }
 
 
@@ -415,34 +361,32 @@ public class GameController : MonoBehaviour
         {
             Bird bird;
             bird = b.GetComponent<Bird>();
-            if (bird.isRight)
-            {
-                if (clicked == false)
-                {
-                    if (bird.hasHat)
-                    {
-                        bird.gameObject.layer = 9;
-                        bird.isRight = false;
-                    }
-                    else
-                        bird.gameObject.layer = 8;
 
-                    hlb.SetActive(true);
-                    blb.SetActive(true);
-                    clb.SetActive(true);
-                    tlb.SetActive(false);
-                    llb.SetActive(true);
+            if (bird.gameObject.layer == 10)
+            {
+                if (bird.hasHat)
+                {
+                    bird.gameObject.layer = 9;
+                    bird.isRight = false;
                 }
                 else
+                    bird.gameObject.layer = 8;
+
+                hlb.SetActive(true);
+                blb.SetActive(true);
+                clb.SetActive(true);
+                tlb.SetActive(false);
+                llb.SetActive(true);
+            }
+            else if (bird.gameObject.layer == 8)
+            {
+                if (bird.hasHat)
                 {
-                    if (bird.hasHat)
-                    {
-                        bird.gameObject.layer = 14;
-                        bird.isRight = false;
-                    }
-                    else
-                        bird.gameObject.layer = 13;
+                    bird.gameObject.layer = 14;
+                    bird.isRight = false;
                 }
+                else
+                    bird.gameObject.layer = 13;
             }
         }
         clicked = true;
@@ -458,29 +402,15 @@ public class GameController : MonoBehaviour
         {
             Bird bird;
             bird = b.GetComponent<Bird>();
-            if (!bird.isRight)
+            if (bird.gameObject.layer == 9)
             {
-                if (clicked == false)
+                if (!bird.hasHat)
                 {
-                    if (!bird.hasHat)
-                    {
-                        bird.gameObject.layer = 9;
-                        //bird.right = false;
-                    }
-                    else
-                        bird.gameObject.layer = 8;
-
+                    bird.gameObject.layer = 12;
+                    // bird.right = false;
                 }
                 else
-                {
-                    if (!bird.hasHat)
-                    {
-                        bird.gameObject.layer = 12;
-                        // bird.right = false;
-                    }
-                    else
-                        bird.gameObject.layer = 11;
-                }
+                    bird.gameObject.layer = 11;
             }
         }
         clicked = true;
@@ -496,9 +426,7 @@ public class GameController : MonoBehaviour
         {
             Bird bird;
             bird = b.GetComponent<Bird>();
-            if (bird.isRight)
-            {
-                if (clicked == false)
+                if (bird.gameObject.layer == 10)
                 {
                     if (bird.hasLegs)
                     {
@@ -514,7 +442,7 @@ public class GameController : MonoBehaviour
                     tlb.SetActive(true);
                     llb.SetActive(false);
                 }
-                else
+                else if(bird.gameObject.layer == 8)
                 {
                     if (bird.hasLegs)
                     {
@@ -524,7 +452,6 @@ public class GameController : MonoBehaviour
                     else
                         bird.gameObject.layer = 13;
                 }
-            }
         }
         clicked = true;
         lrb.SetActive(false);
@@ -539,29 +466,15 @@ public class GameController : MonoBehaviour
         {
             Bird bird;
             bird = b.GetComponent<Bird>();
-            if (!bird.isRight)
+            if (bird.gameObject.layer == 9)
             {
-                if (clicked == false)
+                if (!bird.hasLegs)
                 {
-                    if (!bird.hasLegs)
-                    {
-                        bird.gameObject.layer = 9;
-                        //bird.right = false;
-                    }
-                    else
-                        bird.gameObject.layer = 8;
-
+                    bird.gameObject.layer = 12;
+                    // bird.right = false;
                 }
                 else
-                {
-                    if (!bird.hasLegs)
-                    {
-                        bird.gameObject.layer = 12;
-                        // bird.right = false;
-                    }
-                    else
-                        bird.gameObject.layer = 11;
-                }
+                    bird.gameObject.layer = 11;
             }
         }
         clicked = true;
@@ -592,7 +505,7 @@ public class GameController : MonoBehaviour
         count += blb.activeInHierarchy ? 1 : 0;
         count += tlb.activeInHierarchy ? 1 : 0;
         count += llb.activeInHierarchy ? 1 : 0;
-        if(count < 1)
+        if(count < 7)
         {
             endGame();
         }
